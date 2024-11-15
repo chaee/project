@@ -18,13 +18,8 @@ repro:
 ---
 
 ```{r setup, include=FALSE}
-# labels after r provides a CoT below for multiple chunks
 repro::automate_load_packages()
 repro::automate_load_scripts()
-```
-
-
-```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -78,7 +73,3 @@ We have `32` cars.
 print("Hello World! Python here, do you miss R already?")
 ```
 
-
-```{r}
-knitr::opts_chunk$set(echo = TRUE)
-```
