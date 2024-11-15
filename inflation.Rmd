@@ -1,13 +1,15 @@
 ---
 title: "Inflation Data"
-author: "Aaron Peikert"
+author: "Chaewon Yun"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: 
+  tufte::tufte_html: default
 repro:
   packages:
     - here
     - tidyverse
     - lubridate
+    - tufte
     - aaronpeikert/repro@fc7e884
   scripts:
     - R/prepare_inflation.R
@@ -16,12 +18,17 @@ repro:
 ---
 
 ```{r setup, include=FALSE}
+# labels after r provides a CoT below for multiple chunks
 repro::automate_load_packages()
 repro::automate_load_scripts()
-knitr::opts_chunk$set(echo = FALSE)
 ```
 
-The dataset we use stems from the [Bank of England Research datasets](https://www.bankofengland.co.uk/statistics/research-datasets).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The **dataset** we use stems from the *[Bank of England Research datasets](https://www.bankofengland.co.uk/statistics/research-datasets).*
 
 I quote:
 
@@ -55,4 +62,23 @@ inflation %>%
   labs(color = "") +
   theme(legend.position = c(.1, .9)) +
   NULL
+```
+
+A code chunk is for longer code/output:
+
+```{r}
+with(mtcars, plot(hp, mpg))
+```
+
+Inline code is for single numbers/short text:
+
+We have `32` cars.
+
+```{python}
+print("Hello World! Python here, do you miss R already?")
+```
+
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
 ```
