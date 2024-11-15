@@ -8,6 +8,6 @@ RUN install2.r --error --skipinstalled \
   here \ 
   lubridate \ 
   tidyverse \ 
-  tufterepro::use_gha_docker()
+  tufte
 RUN installGithub.r \ 
   aaronpeikert/repro@fc7e884
